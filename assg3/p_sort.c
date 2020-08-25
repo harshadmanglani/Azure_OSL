@@ -6,23 +6,22 @@
 #include <string.h>
 
 // Function to swap 2 integers
-void swap(int *xp, int *yp) 
-{ 
-    int temp = *xp; 
-    *xp = *yp; 
-    *yp = temp; 
-} 
-  
-// A function to implement bubble sort 
-void bubbleSort(int arr[], int n) 
-{ 
-   int i, j; 
-   for (i = 0; i < n-1; i++)       
-  
-       // Last i elements are already in place    
-       for (j = 0; j < n-i-1; j++)  
-           if (arr[j] > arr[j+1]) 
-              swap(&arr[j], &arr[j+1]); 
+void swap(int *xp, int *yp)
+{
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+// A function to implement bubble sort
+void bubbleSort(int arr[], int n)
+{
+   int i, j;
+   for (i = 0; i < n-1; i++)
+
+       // Last i elements are already in place
+       for (j = 0; j < n-i-1; j++)
+           if (arr[j] > arr[j+1])
+              swap(&arr[j], &arr[j+1]);
 }
 
 // Function to print an array
@@ -75,9 +74,9 @@ int main(int argc, char *argv[])
 			 //Convert array to string called buffer
 			converttostr(nums, tofind, buffer);
 			//Call the program with the string as argument
-			char *const ps_argv[] = {"./bin_search", buffer, 0}; 
+			char *const ps_argv[] = {"./bin_search", buffer, 0};
 			// The path of the program and the character array of the arguments
-			execv("/mnt/d/PICT Corona/TE/SL-II/Assignment 2/b/bin_search", ps_argv); 
+			execv("~/OSL/assg3/bin_search", ps_argv);
 			break;
 		default: //Parent
 			printf("\n Parent Process . . . . . .\n");
