@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#define sz 5
 
 void swap(int *xp, int *yp) 
 { 
@@ -47,7 +48,7 @@ void printarray(int arr[])
 {
 	int i=0;
 	printf("The Array is : \n");
-	while(i<10){
+	while(i<sz){
 		printf("%d\t", arr[i]);
 		i++;
 	}
@@ -55,9 +56,9 @@ void printarray(int arr[])
 
 int main(int argc, char *argv[])
 {
-	int nums[10];
-	printf("Enter 10 numbers in any order : \n");
-	int i=10;
+	int nums[sz];
+	printf("Enter sz numbers in any order : \n");
+	int i=sz;
 	while(i--){
 		scanf("%d", &nums[i]);
 	}
@@ -69,23 +70,22 @@ int main(int argc, char *argv[])
 	}
 	else if (cpid == 0) {    /* Child reads from pipe */
 	printf("Sorting by bubble sort : \n");
-		bubbleSort(nums, 10);
+		bubbleSort(nums, sz);
 		printarray(nums);
 		
-		printf("\n Child Process . . . . .");
+		printf("\n Child Process . . . . .\n");
 		printf("Child ID: %d\n", getpid());
 		printf("Parent ID: %d\n", getppid());
-		sleep(5);
+		// sleep(sz);
 		printf("Child ID: %d\n", getpid());
 		printf("Parent ID: %d\n", getppid());
                
        } else {            /* Parent writes argv[1] to pipe */
        	printf("Sorting by selection sort : \n");
-       	selectionSort(nums, 10);
+       	selectionSort(nums, sz);
        	printarray(nums);
-
-       	sleep(2);
-       printf("\n Parent Process . . . . . .");
+       	// sleep(2);
+       printf("\n Parent Process . . . . . .\n");
         
        }
 }
