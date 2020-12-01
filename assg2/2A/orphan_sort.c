@@ -80,7 +80,9 @@ int main(int argc, char *argv[])
 		printf("Child ID: %d\n", getpid());
 		printf("Parent ID: %d\n", getppid());
                
-       } else {            /* Parent writes argv[1] to pipe */
+       } 
+	   else 
+	   {            /* Parent writes argv[1] to pipe */
        	printf("Sorting by selection sort : \n");
        	selectionSort(nums, sz);
        	printarray(nums);
